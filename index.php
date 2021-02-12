@@ -14,28 +14,57 @@
 			<div class="col-lg-6">
 				<br>
 				<h1 class="text-center">Simple Calculator </h1>
-				<form action="" method="post">
+				<form action="" method="POST">
 					<label for="">Enter First Number</label>
-					<input class="form-control" type="text" name="fnumber" placeholder="First Number">
+					<input class="form-control" type="number" name="fnumber" placeholder="First Number">
                     <br>
 					<label for="">Enter Second Number</label>
-					<input class="form-control" type="text" name="secnumber" placeholder="Second Number">
+					<input class="form-control" type="number" name="secnumber" placeholder="Second Number">
                     <br>
                     <p>Choose any Operator</p>
-					<select class="form-control" name="Operator" id="">
-						<option value="">None</option>
-						<option value="">+</option>
-						<option value="">-</option>
-						<option value="">x</option>
-						<option value="">/</option>
+					<select class="form-control" name="operator" >
+						<option >None</option>
+						<option >+</option>
+						<option >-</option>
+						<option >x</option>
+						<option >/</option>
 					</select>
 					<br>
-					<input type="submit" name="submit" value="Calculate" class="btn btn-success">
-					<input type="reset" value="Clear" class="btn btn-danger">
+					<button type="submit" name="submit" value="Calculate" class="btn btn-success">Calculate	</button>
+					<button type="reset" value="Clear" class="btn btn-danger">Reset</button> 
 				</form>
 				<br>
 				<h4>The Answer is </h4>
-				<div id="answer"></div>
+				<div id="answer">
+				<?php
+				if(isset($_POST['submit'])){
+					$result1 = $_POST['fnumber'];
+					$result2 = $_POST['secnumber'];
+					$sign = $_POST['operator'];
+					switch ($sign){
+						case 'None':
+							echo "Please choose at least one operator";
+							break;
+
+						case '+':
+							echo $result1 + $result2;
+							break;
+
+						case '-':
+							echo $result1 - $esult2;
+							break;
+
+						case 'x':
+							echo $result1 * $result2;
+							break;
+
+						case '/':
+							echo $result1 / $result2;
+							break;
+					}
+				}
+				?>
+				</div>
 			</div>
 			<div class="col-lg-3"></div>
 		</div>
