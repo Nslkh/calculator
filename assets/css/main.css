@@ -1,0 +1,11 @@
+body{
+	background-color: #fdc /*lightgrey*/;
+}
+#answer{
+	background-color: #f4f4f4;
+	padding:30px;
+	border-radius: 5px;
+	text-align: center; 
+}
+
+
